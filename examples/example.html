@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Rangeslide.js - demo</title>
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+	<!-- <link rel="stylesheet" href="example.css" type="text/css" /> -->
+	<link rel="stylesheet"
+		href="https://www.cssscript.com/demo/smooth-custom-range-slider-control-pure-javascript-rangeslide-js/rangeslide.css"
+		type="text/css" />
+
+	<style>
+		.rangeslide .slider .track {
+			background: #FAF7F8;
+			border-radius: 12px;
+			border: none;
+			box-shadow: none;
+		}
+
+		.rangeslide .slider .track-progress {
+			background: #98E0E5;
+			border-radius: 100px;
+			border: none;
+		}
+
+		.rangeslide .slider .thumb {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: rgb(152, 224, 229);
+			border: 1.5px solid rgb(255, 255, 255);
+			box-sizing: border-box;
+			box-shadow: rgb(41 43 50 / 12%) 0px 6px 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sliders">
+
+		<div class="example">
+			<div id="rangeslide2"></div>
+		</div>
+	</div>
+	<div class="preview">
+		<h3 class="panel-title">Data preview:</h3>
+		<div id="presenter" class="panel-body"></div>
+	</div>
+	<script
+		src="https://www.cssscript.com/demo/smooth-custom-range-slider-control-pure-javascript-rangeslide-js/rangeslide.js"></script>
+	<script>
+		var data1 = [
+			{ key: "1", price: "Free", test: "Enterprise Features" },
+			{ key: "3", price: "$0", test: "Enterprise Features" },
+			{ key: "5", price: "$5", test: "Just Starting Features" },
+			{ key: "25", price: "$25", test: "Scaling Up Features" },
+			{ key: "50", price: "$50", test: "Scaling Up Features" },
+			{ key: "100", price: "$100", test: "Scaling Up Features" },
+			{ key: "125", price: "Contact us", test: "Enterprise Features" }
+		];
+
+		function onChange(arg) {
+			console.log(arg);
+		}
+
+		var rangeslide2 = rangeslide("#rangeslide2", {
+			data: data1,
+			showLabels: true,
+			startPosition: 3,
+			showTicks: false,
+			dataSource: "value",
+			labelsContent: "key",
+			valueIndicatorContent: "key",
+			thumbWidth: 14,
+			thumbHeight: 14,
+			showTrackProgress: true,
+			handlers: {
+				"valueChanged": [onChange]
+			}
+		});
+
+	</script>
+</body>
+
+</html>
